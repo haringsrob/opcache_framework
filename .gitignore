@@ -1,0 +1,6 @@
+tmp.txt
+log.txt
+results.txt
+framework/src/Cached
+!framework/src/Cached/.gitkeep
+.idea

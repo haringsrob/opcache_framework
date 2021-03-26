@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  php:
+    build:
+      dockerfile: ./docker/php.Dockerfile
+      context: .
+    restart: always
+    volumes:
+      - "./:/var/www/html/"
+    ports:
+      - "8080:80"
+  mysql:
+    image: mysql:8.0.19
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "33066:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
